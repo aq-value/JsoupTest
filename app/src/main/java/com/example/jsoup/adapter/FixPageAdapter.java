@@ -42,17 +42,25 @@ public class FixPageAdapter extends FragmentStatePagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        return super.instantiateItem(container, position);
+//        return super.instantiateItem(container, position);
+        Fragment fragment=null;
+        try {
+            fragment= (Fragment) super.instantiateItem(container,position);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return fragment;
     }
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        super.destroyItem(container, position, object);
+//        super.destroyItem(container, position, object);
     }
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return super.getPageTitle(position);
+       return  mTitles.get(position);
     }
 }

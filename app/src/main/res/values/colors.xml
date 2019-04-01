@@ -7,5 +7,7 @@
     <color name="tab_indicator_selector">#008899</color>
     <color name="tab_text_selector">#008899</color>
     <color name="tab_text_noraml">#000000</color>
+    <color name="black">#ff000000</color>
+    <color name="blue_text_007dff">#00ff00</color>
 
 </resources>

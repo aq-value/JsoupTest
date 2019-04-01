@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public abstract class  BaseActivity extends RxAppCompatActivity {
+public abstract class  BaseActivity extends RxAppCompatActivity implements BaseView{
 
     protected Context mContext;
     protected Unbinder mUnbinder;

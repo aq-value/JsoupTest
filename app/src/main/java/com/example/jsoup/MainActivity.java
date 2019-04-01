@@ -12,6 +12,7 @@ import android.os.PersistableBundle;
 import android.widget.Button;
 
 import com.example.jsoup.adapter.FixPageAdapter;
+import com.example.jsoup.factory.FragmentFactory;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -47,12 +48,36 @@ public class MainActivity extends BaseActivity {
         FixPageAdapter fixPageAdapter = new FixPageAdapter(this.getSupportFragmentManager());
 
         for (int i = 0;i<mTitles2.size();i++){
-            mFragments.add(FragmentFactory.class)
+            mFragments.add(FragmentFactory.creatFragment(i));
         }
         fixPageAdapter.setTitles(mTitles2);
-        fixPageAdapter.setFragments();
+        fixPageAdapter.setFragments(mFragments);
+        mViewPager.setAdapter(fixPageAdapter);
+
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                showTheFragment( position);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                showTheFragment( position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
+    private void showTheFragment(int position) {
+        Fragment baseFragment =FragmentFactory.creatFragment(position);
+//        baseFragment.show();
+    }
 
 
     @Override
