@@ -10,8 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:name=".MyApplication"
-        android:theme="@style/MyAppTheme">
-        <activity android:name=".MainActivity"
+        android:theme="@style/AppTheme">
+        <activity android:name=".OrignActivity"
             android:persistableMode="persistAcrossReboots">
 
             <intent-filter>
@@ -20,6 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity"
+            />
+        <activity android:name=".aadaggertest.DaggerActivity" />
     </application>
 
 </manifest>

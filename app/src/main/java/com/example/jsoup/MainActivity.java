@@ -10,6 +10,7 @@ import butterknife.BindView;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.widget.Button;
+import android.widget.TableLayout;
 
 import com.example.jsoup.adapter.FixPageAdapter;
 import com.example.jsoup.factory.FragmentFactory;
@@ -53,9 +54,9 @@ public class MainActivity extends BaseActivity {
         fixPageAdapter.setTitles(mTitles2);
         fixPageAdapter.setFragments(mFragments);
         mViewPager.setAdapter(fixPageAdapter);
-
+        mTabLayout.setTabMode(TabLayout.MODE_FIXED);
         mTabLayout.setupWithViewPager(mViewPager);
-        mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+//        mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -83,5 +84,10 @@ public class MainActivity extends BaseActivity {
     @Override
     protected int getLayout() {
         return R.layout.activity_main;
+    }
+
+    @Override
+    public void showToast(String s) {
+
     }
 }

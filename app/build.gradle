@@ -51,11 +51,17 @@ dependencies {
     //生命周期管理
     //    implementation 'com.trello.rxlifecycle3:rxlifecycle:3.0.0'
     implementation 'com.trello.rxlifecycle3:rxlifecycle-components:3.0.0'
-//    implementation 'com.trello.rxlifecycle3:rxlifecycle-android-lifecycle:3.0.0'
-
+    //    implementation 'com.trello.rxlifecycle3:rxlifecycle-android-lifecycle:3.0.0'
     //...............androidx 迁移的design
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.jakewharton:butterknife:10.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
-//    implementation 'com.trello.rxlifecycle3:rxlifecycle-android-lifecycle:3.0.0'
+    //    implementation 'com.trello.rxlifecycle3:rxlifecycle-android-lifecycle:3.0.0'
+
+    //dagger公用api
+    implementation 'com.google.dagger:dagger:2.21'
+    //指定注解处理器
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.21'
+    //添加android缺失的部分javax注解
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
 }

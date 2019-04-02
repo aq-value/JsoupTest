@@ -22,7 +22,7 @@ public abstract class BaseFragmentLoading extends RxFragment implements BaseView
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mContext = getActivity();
+        mContext = (BaseActivity) getActivity();
         initData();
     }
 
@@ -42,12 +42,14 @@ public abstract class BaseFragmentLoading extends RxFragment implements BaseView
 
                 @Override
                 protected void load() {
-                    this.load();
+//                    this.load();
                 }
             };
         }
         return  mLoadingPager;
     }
+
+
 
     protected abstract int getlayout();
 
@@ -58,7 +60,7 @@ public abstract class BaseFragmentLoading extends RxFragment implements BaseView
 
     @Override
     public void onDestroyView() {
-        mUnbinder.unbind();
+        if (mUnbinder!=null)mUnbinder.unbind();
         super.onDestroyView();
     }
 
@@ -97,7 +99,7 @@ public abstract class BaseFragmentLoading extends RxFragment implements BaseView
 
     @Override
     public void showToast(String msg) {
-        mContext.sh
+        mContext.showToast(msg);
     }
 
     @Override
